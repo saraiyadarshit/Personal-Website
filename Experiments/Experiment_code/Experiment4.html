@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Experiment 4</title>
+    <link rel="stylesheet" type="text/css" href="../css/css4.css" />
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+    content="initial-scale=1, minimum-scale=1"/>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <script lang="javascript">
+        $(document).ready(function () {
+            $("#mybody section h1").click(function (z) {
+                $(this).parents().siblings("section").addClass("hide_para");
+                $(this).parents("section").removeClass("hide_para");
+
+                z.preventDefault();
+            });
+        });
+        </script>
+   
+</head>
+<body>
+     
+    <h2> Experiment 4</h2>
+
+    <div id="mybody">
+  <section id="para1">
+    <p class="arrow">&#9654;</p><h1><a href="#">About Me</a></h1>
+    <p>Hi, I am <strong>Darshit Saraiya</strong>, a graduate Student at Northeastern University.
+         I have enrolled in this course because my interest lies in developing interactive websites.
+           I look forward to learn new technologies such as .NET , AJAX and JQUERY. 
+        I am also interested in sports like swimming, cricket and soccer. </p>
+      <p>My home page will be enanced as the course progresses and I learn new techniques to make my homepage standout.</p>
+
+  </section>
+  <section id="para2" class="hide_para">
+    <p class="arrow">&#9654;</p><h1><a href="#">Important Links</a></h1>
+    <li><a href="http://net4.ccs.neu.edu/home/rasala/Default.aspx" target="_blank">Dr.Rasala's Website</a></li><br/>
+            <li><a href="http://net4.ccs.neu.edu/home/jga/" target="_blank">Jose Annunziato</a></li><br/>
+            <li><a href="http://www.northeastern.edu/" target="_blank">Northeastern University</a></li>
+  </section>
+
+  <section id="para3" class="hide_para">
+    <p class="arrow">&#9654;</p><h1><a href="#">Contact Me</a></h1>
+    <p><strong>Email : </strong>saraiya.d@husky.neu.edu
+            <br/>
+            <strong>Phone :</strong> (617)-459-7376 </p>
+    
+  </section>
+        </div>
+        <br/><br/>
+        <div class="documentation">
+            <hr/>
+            <h3> Documentation</h3>
+            <p>The purpose of this experiment was to learn to form Accordian which is used when there is less space available to display all contents in the same page.</p>
+            <p>I also learned JQuery in this experiment.</p>
+            <p>Used HTML5, CSS3 and JQuery to implement this experiment.</p>
+            <p>Learnt one important basics of selection in CSS, which is the not selector (extremely helpful).</p>
+            <p>View Source : <a href="../../fileview/Default.aspx?~/Experiments/Experiment_code/Experiment4.html" target="_blank">Click Here!</a></p>
+</div>
+
+</body>
+</html>

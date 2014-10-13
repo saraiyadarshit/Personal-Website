@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Experiment 6</title>
+    <link rel="stylesheet" type="text/css" href="../css/css6.css" />
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+    content="initial-scale=1, minimum-scale=1"/>
+
+    <script type="text/javascript">
+
+        function validateForm() {
+
+            //Name validation
+            var y = document.forms["form1"]["fullname"].value;
+            if (y == null || y == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+
+            //Comment validation
+            var c = document.forms["form1"]["comments"].value;
+            if (c == null || c == "") {
+                alert("The Comment box is empty. Please enter some comment.");
+                return false;
+            }
+        }
+
+
+
+   </script>
+</head>
+<body>
+    <h2>Feedback Form</h2>
+
+    <div>
+<form name="form1" action="mailto:darshit@ccs.neu.edu?subject=Feedback" method="post">
+
+Your name: <br/>
+<input type="text" name="fullname"/><br/>
+<br/>
+
+Your email: <br/>
+<input type="email" name="emailID"/><br/>
+<br/>
+
+Your comments: <br/>
+<textarea name="comments" rows="15" cols="50"></textarea><br/><br/>
+
+<input type="submit" value="Send Email" onclick="return validateForm()"/>
+ 
+</form>    
+        </div>
+    <div class="documentation">
+            <hr/>
+            <h3> Documentation</h3>
+            <p>The purpose of this experiment was to create a feedback form which is very important for user inputs and suggestions.</p>
+            <p>The User will enter the comments in the Comments text area and the response will be sent to my personal email ID.</p>
+            <p>This will help me to analyze user inputs and make changes on my website to meet their expectations.</p>
+            <p>Upon clicking the send email button a Javascript will run to validate the inputs given by the user. If there is an invalid input, the Javascript will throw an alert with information to rectify the mistake.</p>
+            <p>The Email procedure is not working directly right now.</p>
+            <p>This Experiment will be used in the project to create the feedback page.</p>   
+            <p>Used Mozilla thunderbird, HTML5, CSS3 and Javascript to implement this experiment.</p>
+
+        <p>View Source : <a href="../../fileview/Default.aspx?~/Experiments/Experiment_code/Experiment6.html" target="_blank">Click Here!</a></p>
+</div>    
+</body>
+</html>

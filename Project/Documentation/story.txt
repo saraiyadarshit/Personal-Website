@@ -1,0 +1,25 @@
+﻿../../story/whatisnext.htm?../Project/Documentation/story.txt What is Next?
+Overview.html										Project Overview
+HomePage_Doc.html									HomePage
+InTheaters_Doc.html									In Theaters Page
+ComingSoon_Doc.html									Upcoming Movies Page
+MovieInformation_Doc.html							Movie Information Page
+PopularMovies_doc.html								Popular Movies Page
+OnDVDs_Doc.html										On DVDs Page
+CurrentReleases_Doc.html							Current Releases on DVD Page
+TopRentals_Doc.html									Top Rented Movies on DVD Page
+UpcomingDvds_Doc.html								Upcoming Movies on DVD Page
+NewReleases_Doc.html								New Releases on DVD Page
+Search_Doc.html										Search Page
+Compare_Doc.html									Compare Movies Page
+Browsers_FluidLayout.html							Browser Compatibility and Fluid Layout
+Futurescope.html									Future Scope
+References_Doc.html									References
+Acknowledgements_Doc.html							Acknowledgements
+Termsandcondition.html								Terms And Conditions
+
+
+
+
+
+

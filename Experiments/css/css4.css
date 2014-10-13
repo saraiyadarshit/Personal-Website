@@ -1,0 +1,101 @@
+﻿@media screen {
+        body {
+            margin: 0;
+            padding: 0;
+            
+           }
+
+        .pad {
+            padding: 20px;
+        }
+    }
+
+    @media screen and (min-width: 920px) {
+        body {
+                 width: 920px;
+             }
+    }
+
+    @media screen and (max-width: 919px) {
+        body {
+            max-width: 100%;
+        }
+    }
+
+h2 {
+    text-align:center;
+}
+
+#mybody {
+    position:relative;
+    left:auto;
+  margin-bottom:30px;
+  text-align:justify;
+}
+
+#mybody h1 {
+  line-height:1.2;
+  font-size:20px;
+  background-color:lightsteelblue;
+  margin:0;
+  padding: 10px 10px 10px 30px;
+}
+#mybody section, #mybody .arrow, #mybody h1, #mybody p {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+#mybody h1 a {
+  color:black;
+}
+
+#mybody p {
+  padding:0 10px;
+  color:black;
+  font-size:110%;
+}
+#mybody section.hide_para p:not(.arrow) {
+  color:#fff;
+}
+
+#mybody section.hide_para {
+  height:44px;
+}
+
+#mybody section {
+  overflow:hidden;
+  height:220px;
+  width:70%;
+  border:1px #333 solid;
+  
+}
+
+
+#mybody section:not(.hide_para) h1 {
+  background-color:lightskyblue;
+}
+
+#mybody section:not(.hide_para) .arrow {
+  display:block;
+  -webkit-transform:rotate(90deg);
+  -moz-transform:rotate(90deg);
+  -o-transform:rotate(90deg);
+  transform:rotate(90deg);
+  padding:0;
+}
+
+#mybody .arrow {
+  padding:0;
+  margin:10px 0 0 6px;
+  line-height:20px;
+  width:13px;
+  position:absolute;
+}
+
+.documentation {
+    width:120%;
+    font-family:MyriadPro;
+    font-size:110%;
+    text-align:justify;
+}

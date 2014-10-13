@@ -1,0 +1,29 @@
+﻿@media screen {
+        body {
+            margin: 0;
+            padding: 0;
+            background:url('../../images/exp7.png') no-repeat;
+            background-size:cover;  
+           }
+
+        .pad {
+            padding: 20px;
+        }
+    }
+
+    @media screen and (min-width: 920px) {
+        body {
+                 width: 920px;
+             }
+    }
+
+    @media screen and (max-width: 919px) {
+        body {
+            max-width: 100%;
+        }
+    }
+
+h1 {
+    text-align:center;
+    font-family:MyriadPro;
+}

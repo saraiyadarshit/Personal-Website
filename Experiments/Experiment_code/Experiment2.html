@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <script lang="javascript">
+
+        function turnRed() {
+            var para = document.getElementById("changeToRed");
+            var para1 = document.getElementById("changeToRed1");
+            var para2 = document.getElementById("changeToRed2");
+            var para3 = document.getElementById("changeToRed3");
+            para.style.color = "red";
+            para1.style.color = "red";
+            para2.style.color = "red";
+            para3.style.color = "red";
+            alert(window.document.pic.src);
+        }
+
+        function undo() {
+            var para = document.getElementById("changeToRed");
+            var para1 = document.getElementById("changeToRed1");
+            var para2 = document.getElementById("changeToRed2");
+            var para3 = document.getElementById("changeToRed3");
+            para.style.color = "blue";
+            para1.style.color = "blue";
+            para2.style.color = "blue";
+            para3.style.color = "blue";
+        }
+
+        function changeImage() {
+            element = document.getElementById('logo')
+            if (element.src.match("manchester_united_logo1")) {
+                element.src = "../../images/manchester_united_logo.jpg";
+            }
+            else {
+                element.src = "../../images/manchester_united_logo1.jpg";
+            }
+        }
+
+</script>
+
+<head>
+    <title>Experiment 2</title>
+    <link rel="stylesheet" type="text/css" href="../css/css2.css" />
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+    content="initial-scale=1, minimum-scale=1"/>
+
+</head>
+<body>
+
+
+    <div class="pad">
+
+    <h1>Fluid Layout and Javascript</h1>
+
+    <h2>Manchester United...The Red Devils</h2>
+
+
+
+<div class="logo wrap">
+
+<img id="logo" src="../../images/manchester_united_logo.jpg" alt="Manchester United" title="Manchester United"
+    class="picture" />
+</div>
+
+        
+     <p id="changeToRed"><a href="http://www.manutd.com/" target="_blank" title="Official MUFC Page">Manchester United</a> Football Club is an English professional football club, 
+        based in Old Trafford, Greater Manchester, that plays in the Premier League. 
+        Founded as Newton Heath LYR Football Club in 1878, the club changed its name
+        to Manchester United in 1902 and moved to Old Trafford in 1910.</p>
+
+     <p id="changeToRed1">Manchester United are the most successful team in English football, having won
+        more trophies than any other team, including a record 20 League titles, a record 11 FA Cups,
+        four League Cups and a record 20 FA Community Shields.
+        The club has also won three European Cups, one UEFA Cup Winners' Cup, one UEFA Super Cup,
+        one Intercontinental Cup and one FIFA Club World Cup.
+        In 1998–99, the club won a continental treble of the Premier League, 
+        the FA Cup and the UEFA Champions League, an unprecedented feat for an English club</p>
+
+     <p id="changeToRed2">The 1958 Munich air disaster claimed the lives of eight players. In 1968, under the management of Matt Busby,
+        Manchester United was the first English football club to win the European Cup.
+        Alex Ferguson won 28 major honours, and 38 in total, from November 1986 to May 2013,
+        when he announced his retirement after 26 years at the club. Fellow Scot David Moyes was appointed as his replacement on 9 May 2013.</p>
+
+    <p id="changeToRed3">Manchester United is the third-richest football club in the world for 2011–12 in terms of revenue,
+       with an annual revenue of €395.9 million, and the second most valuable sports team in 2013, valued at $3.165 billion.
+       It is one of the most widely supported football teams in the world.
+       After being floated on the London Stock Exchange in 1991, the club was purchased by Malcolm Glazer in May 2005
+       in a deal valuing the club at almost £800 million. In August 2012, Manchester United made an initial public offering on the New York Stock Exchange.</p>
+
+
+        <p><input type="button" class="buttonWidth" value="Turn Red" onclick="turnRed()"/>
+           <input type="button" class="buttonWidth" value="Undo" onclick="undo()"/>
+           <input type="button" class="buttonWidth" value="Swap Logo" onclick="changeImage()"/>
+        </p>
+        <hr class="clear"/>
+
+        <div class="documentation">
+            <h3>Documentation :</h3>
+    <p> The purpose of this experiment was to learn fluid layout and concepts of Javascript.</p>
+    <p> In this experiment the width narrows gracefully as the width of the browser keeps on reducing.</p>
+    <p> I have also used Javascript in the experiment :
+        <li>When the button <strong>Turn Red</strong> is clicked the font color of the paragraphs changes to red.</li>
+        <li>When the button <strong>Undo</strong> is clicked the paragraphs return to the normal font color.</li>
+        <li>When the button <strong>Swap Logo</strong> is clicked the Manchester United team logo changes.</li>
+    </p>
+            <p>References:
+                <li> Wikipidea</li>
+                <li> W3Schools.com</li>
+                </p>
+            <p>View Source : <a href="../../fileview/Default.aspx?~/Experiments/Experiment_code/Experiment2.html" target="_blank">Click Here!</a></p>
+    </div>
+        </div>
+
+
+
+    
+
+    
+</body>
+</html>

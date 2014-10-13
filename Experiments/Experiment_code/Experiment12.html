@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Experiment 12</title>
+    <link rel="stylesheet" type="text/css" href="../css/css12.css" />
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+    content="initial-scale=1, minimum-scale=1"/>
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+
+ 
+
+    <script>
+
+        $(function () {
+            $(".search").click(searchMovies);
+        });
+
+        function searchMovies() {
+            var query = $(".moviename").val();
+            if (query === "" || query === null || typeof query === "undefined")
+                return;
+            MovieSearch(query, renderResults);
+        }
+
+        function MovieSearch(query, callback) {
+
+            $.ajax({
+                url: "http://api.rottentomatoes.com/api/public/v1.0/movies.json",
+                dataType: "jsonp",
+                data: { apikey: "33j424u44fyb857r2abt3938", q: query },
+                success: function (response) {
+                    console.log(response);
+                    if (typeof callback === "function")
+                        callback(response);
+                }
+            });
+        }
+
+        function renderResults(response) {
+            var movies = response.movies;
+            var panel = $("#panel");
+            panel.empty();
+
+                var movie = movies[0];
+                var title = movie.title;
+                var displaytitle = "<b>Title : </b>" + title + "<br/>";
+                panel.append(displaytitle);
+                for (var i = 0; i < 5; i++)
+                {
+                    var cast = movie.abridged_cast[i].characters[0];
+                    var character_name = movie.abridged_cast[i].name;
+                    var display_castandcrew = character_name + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Character Played : " + cast + "<br/>";
+                    panel.append(display_castandcrew);
+                }
+                var review_box = $(".review");
+                var review = movie.critics_consensus;
+                var display_review = "<h3>Review :</h3>" + "<p class='review_text'>" + review + "</p>";
+                review_box.append(display_review);
+                var id = movie.id;
+                MovieInfo(id);
+        }
+
+        function MovieInfo(id) {
+
+            var apikey = "33j424u44fyb857r2abt3938";
+
+            $.ajax({
+                url: "http://api.rottentomatoes.com/api/public/v1.0/movies/" + id + ".json?" + "&apikey=" + apikey,
+                dataType: "jsonp",
+                success: function (response) {
+                    console.log(response);
+                    var synopsis_box = $(".synopsis");
+                    var synopsis = response.synopsis;
+                    //alert(response.synopsis);
+                    if (synopsis == "")
+                        { synopsis = "Not Available"; }
+                    var display_synopsis = "<h3>Synopsis :</h3>" + "<p class='synopsis_text'>" + synopsis + "</p>";
+                    synopsis_box.append(display_synopsis);
+                    }
+            });
+        }
+
+        $(document).ready(function () {
+            $("#flip").click(function () {
+                $("#panel").slideToggle("slow");
+            });
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <h1>Experiment 12</h1>
+    <h2>Toggle function using JQuery</h2>
+    
+
+    <div class="col-sm-6">
+
+                <h2>Search for Any Movie</h2>
+
+    <div class="input-group">
+                  <input type="text" class="moviename" placeholder="Movie Title"/>
+                  <span class="input-group-btn">
+                    <button class="search" type="button">Go</button>
+                  </span>
+                </div>
+
+                <h2>Results:</h2>
+
+                <div id="flip"><strong>Cast and Crew</strong> </div>
+                <div id="panel"></div>
+
+                <div class="synopsis">
+
+                </div>
+
+                <div class="review">
+
+                </div>
+
+            </div>
+
+    <div class="documentation">
+        <hr/>
+        <h2>Documentation:</h2>
+
+       <p> In this experiment I have used the rotten tomatoes api to search for a movie. </p>
+
+       <p>I have created a search bar in which the user will enter a movie name which will be passed as a query to be processed on the server side.</p>
+
+       <p>The server side returns the name of the movies, of which the first movie is selected.</p>
+
+        <p>I am also displaying the cast and crew of the movie using a sliding panel to optimize space.</p>
+
+        <p>I have used JQuery's "slideToggle" function to create the sliding panel.</p>
+
+        <p>I extract the id from the selected movie and make another call to the rottten tomatoes API to print the review and synopsis of the movie.</p>
+
+        <p>I will use this experiment in my Project MovieCentral to display specific movie details.</p>
+
+        <p id="link">View Source : <a href="../../fileview/Default.aspx?~/Experiments/Experiment_code/Experiment12.html" target="_blank">Click Here!</a></p>
+
+  </div>
+
+</body>
+</html>

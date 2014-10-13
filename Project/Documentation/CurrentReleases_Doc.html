@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Project Overview</title>
+    <link rel="stylesheet" type="text/css" href="DocumentationStyle.css" />
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+    content="initial-scale=1, minimum-scale=1"/>
+</head>
+<body>
+    <div class="main_div">
+
+        <div class="main_header">
+            <div class="header">
+                <p id="heading">Project Overview</p>
+                <p id="tagline">My Documentation Of MovieCentral.....</p>
+            </div>
+        </div>
+
+        <div class="contents">
+            <div class="contents_wrapper">
+                <p class="center_heading">Current Releases on DVDs Page</p>
+                <p class="normal_text">
+                    The user can navigate to this page by clicking on the "(See All)" link provided in the OnDVD page which is located besides the Current Releases heading.<br />
+                    The Link to this Page can be found <a target="_blank" href="../project_code/CurrentReleases.html">here</a>
+                </p>
+
+                <p class="sub_heading">Functionalities provided by this Page</p>
+                <p class="normal_text">
+                   This page displays all the movies currently being released on DVDs. On Clicking the title or the poster of the movie the user is directed to a page where the specific movie details are displayed.
+                    Also the user can navigate to any part of website from this page.
+                </p>
+
+                <p class="sub_heading">Detalis about Implementation:</p>
+                <p class="normal_text">On loading this page a function call is made to load the data in the page. First, I make an API call to Rotten Tomatoes API where 
+                    I request the data in JSONP format, a technique taught by Professor Jose Annunziato. I use JavaScript to parse the data which I receive. I use JQUERY's id and class
+                    selectors to encapsulate the data in HTML format, i.e. I am dynamically displaying the data. I am displaying the details of this page in a table. When the page is refreshed,
+                    the table becomes empty and a new API call is made which returns the same or different data based on the Rotten Tomatoes API.
+                </p>
+          
+                <p class="sub_heading">Challenges Faced</p>
+                <p class="normal_text">
+                   The most difficult challenge I faced was how to send a unique information about a movie to other page so that it can display the specific details about the
+                    movie on MovieInformation.aspx page. I solved the problem by appending the id of the movie on the url and using a function on MovieInformation.aspx page to 
+                    extract the id from the url.<br /><br />
+                    The other challenge was displaying the data dynamically. I had to learn Javascript and JQUERY fundamentals to acheive this. I love learning new technologies. I learnt Javascript and JQUERY using 
+                    <a target="_blank" href="http://www.w3schools.com/">W3Schools</a>. Also, Professor Rasala's and Jose Annunziato's experiments helped me a lot.
+                </p>
+
+                <p class="sub_heading">Other Details</p>
+                <p class="normal_text">
+                   Other cool features in this page is the hover effects on the movie sections. If the user brings the mouse over one of the posters
+                   of the movie sections the poster changes its opacity. This gives the posters a different aesthetic look. Also, when the user brings the 
+                   mouse over the title of the movies it changes its color which brings same aesthetic effect on the site.
+                   Both the posters and titles act like a link. Once clicked the user is redirected to a new page which gives the details about that particular movie.
+                </p>
+
+            </div>
+        </div>
+
+         <div class="footer">
+                <p id="footer_text">
+                    Copyright &copy; 2014 Darshit Saraiya | All Rights Reserved  
+                </p>
+         </div>
+
+        </div>
+</body>
+</html>

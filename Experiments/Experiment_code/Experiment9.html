@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Experiment 9</title>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+    content="initial-scale=1, minimum-scale=1"/>
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+
+     <script>
+
+         $(function () {
+             $(".luck").click(searchMovies);
+         });
+
+         function searchMovies() {
+             var query = $(".moviename").val();
+             if (query === "" || query === null || typeof query === "undefined")
+                 return;
+             MovieSearch(query, renderResults);
+         }
+
+         function MovieSearch(query, callback) {
+             var apikey = "6979561fa2d69d55e0124e37c663304d";
+
+             $.ajax({
+                 dataType: "jsonp",
+                 type: "GET",
+                 contentType: "application/json",
+                 url: "http://api.themoviedb.org/3/search/movie?api_key="+ apikey + "&query=" + query,
+                 success: function (response) {
+                     console.log(response);
+                     if (typeof callback === "function")
+                         callback(response);
+                 }
+             });
+         }
+
+         function renderResults(response) {
+             var movies = response.results;
+             var ul = $(".results");
+             ul.empty();
+             for (var i in movies) {
+                 var movie = movies[i];
+                 var title = movie.title;
+                 var releasedate = movie.release_date;
+                 var li = $("<li>");
+                 li.append(title);
+                 li.append("  ");
+                 li.append(releasedate);
+                 ul.append(li);
+             }
+         }
+
+    </script>
+
+</head>
+
+<body>
+    <div class="main_div">
+        <div class="header">
+            <div class="exp9">
+                <h1>Experiment 9</h1>
+            </div>
+
+            <div class="tvdb">
+                <h2>The Movie database API</h2>
+            </div>
+        </div>        
+
+
+    <div class="main_body">
+        <div class="sub_body">
+             <input type="text" class="moviename" placeholder="Movie Title"/>
+             <span class="input-group-btn">
+                    <button class="luck" type="button">Go</button>
+             </span>
+        </div>
+        <h2>Results:</h2>
+        <ul class="results"></ul>
+
+     </div>
+        <div class="documentation">
+        <hr/>
+        <h3>Documentation:</h3>
+
+       <p> In this experiment I have used the Movie DB API. </p>
+
+       <p>I have created a search bar in which the user will enter a movie name which will be passed as a query to be processed on the server side.</p>
+
+       <p>The server side returns the name of the movies and release dates, which is being displayed as a list.</p>
+
+       <p>View Source : <a href="../../fileview/Default.aspx?~/Experiments/Experiment_code/Experiment9.html" target="_blank">Click Here!</a></p>
+
+        </div>
+    </div>
+</body>
+</html>

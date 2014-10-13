@@ -1,0 +1,84 @@
+﻿
+h1 {
+    text-align: center;
+    background-color:aliceblue;
+}
+.top-left {
+    background-color: lightsteelblue;
+}
+#top-right {
+    position:absolute;
+    right:2%;
+    top:9.8%;
+}
+.center-left {
+    position:absolute;
+    background-color:greenyellow;
+}
+#profile {
+    width: 35%;
+    height: 35%;
+}
+#center {
+    position:absolute;
+    text-align:center;
+    background-color:aqua;
+    left: 38%;
+    top:19%;
+    width:30%;
+    height:40%;
+}
+#links{
+    position:absolute;
+    text-align:center;
+    background-color:powderblue;
+    left: 38%;
+    top:60%;
+    width:30%;
+    height:32%;
+}
+#center-header{
+    position:absolute;
+    text-align:center;
+    background-color:aqua;
+    left: 38%;
+    top:4%;
+    width:30%;
+    height:10%;
+}
+#center-right {
+     position:absolute;
+    text-align:center;
+    background-color:deepskyblue;
+    left: 75%;
+    top:4%;
+    width:20%;
+    height:10%;
+}
+#right-contactme {
+    position:absolute;
+    text-align:center;
+    background-color:deepskyblue;
+    left: 75%;
+    top:19%;
+    width:20%;
+    height:72%;
+}
+div.footer {
+    
+    position:absolute;
+    bottom:2%;
+    height:2%;
+    width:99%;
+    text-align:center;
+}
+#box {
+    margin:auto;
+   
+}
+.document {
+    position:absolute;
+    font-size:120%;
+    bottom:-73%;
+    
+}

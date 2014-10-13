@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Experiment 11</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/css11.css" />
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+    content="initial-scale=1, minimum-scale=1"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+       
+        var apikey = "6979561fa2d69d55e0124e37c663304d";
+
+        // calls all the functions in the order written below
+        onload = function loadImages() {
+            loadInTheatresMovies();
+            loadPopularMovies();
+            loadComingSoonMovies();
+        }
+
+        function loadInTheatresMovies() {
+
+            $.ajax({
+                dataType: "jsonp",
+                type: "POST",
+                contentType: "application/json",
+                url: "http://api.themoviedb.org/3/movie/now_playing?api_key=" + apikey,
+                success: function (moviesinTheatre) {
+                    console.log(moviesinTheatre);
+                    // store the resuls in movies
+                    var movies = moviesinTheatre.results;
+                    var ul = $(".intheatres");
+                    ul.empty();
+                    for (var i = 0; i < 5; i++) {
+                        var movie = movies[i];
+                        var img = movie.poster_path;
+                        var li = $("<li>");
+                        li.append(img);
+                        ul.append(li);
+                    }
+                }
+            });
+        }
+
+        function loadPopularMovies() {
+
+            $.ajax({
+                dataType: "jsonp",
+                type: "POST",
+                contentType: "application/json",
+                url: "http://api.themoviedb.org/3/movie/popular?api_key=" + apikey,
+                
+                success: function (Popularmovies) {
+                    console.log(Popularmovies);
+                    // store the resuls in movies
+                    var movies = Popularmovies.results;
+                    var displaypath = $(".displaypopular");
+                    displaypath.empty();
+                    var ul = $(".popularmovies");
+                    ul.empty();
+                    for (var i = 0; i < 5; i++) {
+                        var movie = movies[i];
+                        var img_path = "http://api.themoviedb.org/3/movie/popular?api_key=" + apikey + movie.poster_path;
+                        var img = $("<img>");
+                        img.attr("src", img_path);
+                        
+                        img.height(200);
+                        img.width(200);
+
+                        displaypath.append(img);
+                    }
+                }
+            });
+        }
+
+        function loadComingSoonMovies() {
+
+            $.ajax({
+                dataType: "jsonp",
+                type: "POST",
+                contentType: "application/json",
+                url: "http://api.themoviedb.org/3/movie/upcoming?api_key=" + apikey,
+                //data:{},
+                success: function (Upcomingmovies) {
+                    console.log(Upcomingmovies);
+                    // store the resuls in movies
+                    var movies = Upcomingmovies.results;
+                    var ul = $(".comingsoon");
+                    ul.empty();
+                    for (var i = 0; i < 5; i++) {
+                        var movie = movies[i];
+                        var img = movie.poster_path;
+                        var li = $("<li>");
+                        li.append(img);
+                        ul.append(li);
+
+                        
+                    }
+                }
+            });
+        }
+
+    </script>
+
+</head>
+<body>
+    <div class="main_div">
+        <div class="header">
+            <h1>Experiment 11</h1>
+            <h2>The Movie Database</h2>
+        </div>
+
+        <div class="masterNavigation">
+                <ul class="master_navigation">
+                    <li><a href="Experiment11.html">Experiment 11</a></li>
+                    <li><a href="Experiment11.html">Experiment 11</a></li>
+                    <li><a href="Experiment11.html">Experiment 11</a></li>
+                    <li><a href="Experiment11.html">Experiment 11</a></li>
+                    <li><a href="Experiment11.html">Experiment 11</a></li>
+                    <li><a href="Experiment11.html">Experiment 11</a></li>
+                </ul>
+            </div>
+
+        <div class="in_theatres">
+            <h3>In Theatres: </h3>
+            <ul class="intheatres"></ul>
+
+        </div>
+
+        <div class="Popular_Movies">
+            <h3>Popular Movies:</h3>
+            <div class="displaypopular">
+
+            </div>
+        </div>
+
+        <div class="Coming_Soon">
+            <h3>Coming Soon:</h3>
+            <ul class="comingsoon"></ul>
+        </div>
+
+        <div class="documentation">
+            <h3>Documentation:</h3>
+            <ul>
+            <li>In this experiment I have used The Movie DB API to display the path of the movie posters which are currently in theatres, popular movies and upcoming movies.</li>
+            <li>I have made three different requests to the TV DB API to display the movies.</li>
+            <li>I have used javascript and AJAX.</li>
+            <li>In this experiment I tried to display images of the popular movies, but in this API I got a poster path which points to server error. 
+                There is another way to get the images in this API which is through movie ID which we get by making additional requests to the API, unfortunately making the website slower.</li>
+            <li>On rigorous testing I came to the conclusion that the rotten tomatoes API is stronger than Movie DB API and is well suited to my needs.</li>
+            <li id="link">View Source : <a href="../../fileview/Default.aspx?~/Experiments/Experiment_code/Experiment11.html" target="_blank">Click Here!</a></li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>

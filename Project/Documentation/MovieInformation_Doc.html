@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Project Overview</title>
+    <link rel="stylesheet" type="text/css" href="DocumentationStyle.css" />
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+    content="initial-scale=1, minimum-scale=1"/>
+</head>
+<body>
+    <div class="main_div">
+
+        <div class="main_header">
+            <div class="header">
+                <p id="heading">Project Overview</p>
+                <p id="tagline">My Documentation Of MovieCentral.....</p>
+            </div>
+        </div>
+
+        <div class="contents">
+            <div class="contents_wrapper">
+                <p class="center_heading">Movie Information Page</p>
+                <p class="normal_text">
+                    The user can navigate to this page by clicking on a title or poster of any movie on the website. This page can also be found on SiteMap.<br />
+                    The Link to this Page can be found <a href="../project_code/MovieInformation.aspx?id=770672122" target="_blank">here</a> : In this case "Toy Story 3".
+                </p>
+
+                <p class="sub_heading">Functionalities provided by this Page</p>
+                <p class="normal_text">
+                   This page displays specific movie details of a particular movie which is selected by the user.
+                    Also the user can navigate to any part of website from this page.
+                </p>
+
+                <p class="sub_heading">Detalis about Implementation:</p>
+                <p class="normal_text">
+                    On loading this page a function call is made to a function "onpageload()". I have written a code which helps me to extract the URL from
+                    the address bar and extract the unique movie ID which is appended to the URL. The function then makes an API call to Rotten Tomatoes API where 
+                    I request the data in JSONP format, a technique taught by Professor Jose Annunziato. I use JavaScript to parse the data which I receive. 
+                    I use JQUERY's id and class selectors to encapsulate the data in HTML format, i.e. I am dynamically displaying the data. Then anther function 
+                    is called to display similar movies which uses similar steps to display the data. I am displaying the data in divs and when the page is refreshed,
+                    the divs become empty and a new API call is made which returns the same or different data based on the Rotten Tomatoes API.
+                </p>
+          
+                <p class="sub_heading">Challenges Faced</p>
+                <p class="normal_text">
+                   The most difficult challenge was displaying the movie information without using table because professor Rasala had mentioned that we cannot use tables just for the purpose
+                    of layout. I solved this challenge using JavaScript and JQUERY.<br /><br />
+                    The other challenge was displaying the cast and crew in a sliding panel. I performed a successful experiment on the same functionality but when I implemented it
+                    on this page it did not work as I had expected. I went on to write some new code so that my website did not break when there was no cast information provided in
+                     the data received from the Rotten Tomatoes API.
+                    The other challenge was displaying the data dynamically. I had to learn Javascript and JQUERY fundamentals to acheive this. I love learning new technologies. I learnt Javascript and JQUERY using 
+                    <a target="_blank" href="http://www.w3schools.com/">W3Schools</a>. Also, Professor Rasala's and Jose Annunziato's experiments helped me a lot.
+                </p>
+
+                <p class="sub_heading">Other Details</p>
+                <p class="normal_text">
+                   Other cool features in this page is the hover effects on the movie sections. If the user brings the mouse over one of the posters
+                   of the movie sections the poster changes its opacity. This gives the posters a different aesthetic look. Also, when the user brings the 
+                   mouse over the title of the movies it changes its color which brings same aesthetic effect on the site.
+                   Both the posters and titles act like a link. Once clicked the user is redirected to a new page which gives the details about that particular movie.
+                </p>
+
+            </div>
+        </div>
+
+         <div class="footer">
+                <p id="footer_text">
+                    Copyright &copy; 2014 Darshit Saraiya | All Rights Reserved  
+                </p>
+         </div>
+
+        </div>
+</body>
+</html>

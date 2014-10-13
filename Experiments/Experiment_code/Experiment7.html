@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Experiment 7</title>
+    <link rel="stylesheet" type="text/css" href="../css/css7.css" />
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+    content="initial-scale=1, minimum-scale=1"/>
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+
+ 
+
+    <script>
+
+        $(function () {
+            $(".luck").click(searchMovies);
+        });
+
+        function searchMovies() {
+            var query = $(".moviename").val();
+            if (query === "" || query === null || typeof query === "undefined")
+                return;
+            MovieSearch(query, renderResults);
+        }
+
+        function MovieSearch(query, callback) {
+
+            $.ajax({
+                url: "http://api.rottentomatoes.com/api/public/v1.0/movies.json",
+                dataType: "jsonp",
+                data: { apikey: "33j424u44fyb857r2abt3938", q: query },
+                success: function (response) {
+                    console.log(response);
+                    if (typeof callback === "function")
+                        callback(response);
+                }
+            });
+        }
+
+        function renderResults(response) {
+            var movies = response.movies;
+            var ul = $(".results");
+            ul.empty();
+            for (var i in movies) {
+                var movie = movies[i];
+                var title = movie.title;
+                var li = $("<li>");
+                li.append(title);
+                ul.append(li);
+            }
+        }
+        
+    </script>
+
+</head>
+
+<body>
+    <h1>Experiment 7</h1>
+    <h2>Rotten Tomatoes API</h2>
+    
+
+    <div class="col-sm-6">
+
+                <h2>Search for Any Movie</h2>
+
+    <div class="input-group">
+                  <input type="text" class="moviename" placeholder="Movie Title"/>
+                  <span class="input-group-btn">
+                    <button class="luck" type="button">Go</button>
+                  </span>
+                </div>
+
+                <h2>Results:</h2>
+
+                <ul class="results"></ul>
+
+            </div>
+
+    <div class="documentation">
+        <hr/>
+        <h2>Documentation:</h2>
+
+       <p> In this experiment I have used the rotten tomatoes api. </p>
+
+<p>I have created a search bar in which the user will enter a movie name which will be passed as a query to be processed on the server side.</p>
+
+<p>The server side returns the name of the movies, which is being displayd as a list.</p>
+
+        <p>View Source : <a href="../../fileview/Default.aspx?~/Experiments/Experiment_code/Experiment7.html" target="_blank">Click Here!</a></p>
+
+  </div>
+
+</body>
+</html>

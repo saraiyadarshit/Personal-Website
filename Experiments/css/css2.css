@@ -1,0 +1,84 @@
+﻿@media screen {
+        body {
+            margin: 0;
+            padding: 0;
+            background-image:url('../../images/manchester-united.jpg');
+            background-repeat:no-repeat;
+            background-position:left center; 
+        }
+
+        .pad {
+            padding: 20px;
+        }
+    }
+
+    @media screen and (min-width: 920px) {
+        body {
+                 width: 920px;
+             }
+    }
+
+    @media screen and (max-width: 919px) {
+        body {
+            max-width: 100%;
+        }
+    }
+
+h1 {
+    text-align:center;
+    font-family:'Times New Roman';
+    
+}
+
+h2 {
+    color:darkgreen;
+}
+.logo {
+    float:left;
+    
+}
+.picture {
+max-width:100%;
+}
+
+.wrap {
+    max-width: 58%;
+    max-height:50%;
+    padding-right: 2%;
+}
+
+.clear {
+    clear:both;
+}
+#changeToRed {
+    font-family:'Comic Sans MS';
+    text-align:justify;
+    color:blue;
+}
+#changeToRed1 {
+    font-family:'Comic Sans MS';
+    text-align:justify;
+    color:blue;
+}
+#changeToRed2 {
+    font-family:'Comic Sans MS';
+    text-align:justify;
+    color:blue;
+}
+#changeToRed3 {
+    font-family:'Comic Sans MS';
+    text-align:justify;
+    color:blue;
+}
+.documentation {
+    font-size:120%;
+}
+a:link {color:Black;text-decoration: none;}
+a:visited {color:Black;text-decoration: none;}
+a:hover {color: red; font-weight: Bold; font-size:120%;}
+a:active {color:Black;font-weight: Bold;}
+
+.buttonWidth {
+    width: 10em;
+    font:bold;
+}

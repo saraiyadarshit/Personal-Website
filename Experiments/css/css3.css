@@ -1,0 +1,140 @@
+﻿@media screen {
+        body {
+            margin: 0;
+            padding: 0;
+            background:url('../../images/wood.png') no-repeat;
+            background-size:cover;
+           }
+
+        .pad {
+            padding: 20px;
+        }
+    }
+
+    @media screen and (min-width: 920px) {
+        body {
+                 width: 920px;
+             }
+    }
+
+    @media screen and (max-width: 919px) {
+        body {
+            max-width: 100%;
+        }
+    }
+
+h2 {
+    font-family:MyriadPro;
+    left:auto;
+    font-size:200%;
+}
+
+#hoverpic {
+  position:relative;
+}
+
+#hoverpic img {
+  position:absolute;
+  left:0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+#hoverpic img.top:hover {
+  opacity:0;
+}
+
+    #hoverpic p {
+        font-family:MyriadPro;
+        font-size:125%;
+    }
+
+    #hoverpic {
+  position:relative;
+}
+
+#hoverpic2 img {
+  position:absolute;
+  top:20%;
+  left:35%;
+  -webkit-transition: -webkit-transform 1s, opacity 1s ease-in-out, width 1s, height 1s;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: transform 1s, opacity 1s ease-in-out, width 1s, height 1s;
+}
+
+#hoverpic2 img.second:hover {
+  opacity:0;
+  width:10px;
+  height:10px;
+  transform:rotate(360deg);
+-webkit-transform:rotate(360deg);
+}
+
+    #secondpara {
+        position:absolute;
+        left:35%;
+        top:11%;
+        font-family:MyriadPro;
+        font-size:125%;
+    }
+
+.animate
+{
+position:absolute;
+left:70%;
+width:400px;
+height:350px;
+background-image:url(../../images/nature1.jpg);
+background-repeat:no-repeat;
+background-size:400px 350px;
+animation:images 5s;
+animation-iteration-count:infinite;
+-webkit-animation:images 8s;
+-webkit-animation-iteration-count:infinite;
+}
+
+@keyframes images
+{
+25%   {background-image:url(../../images/nature1.jpg); background-repeat:no-repeat; background-size:400px 350px;}
+50%  {background-image:url(../../images/nature2.jpg); background-repeat:no-repeat; background-size:400px 350px;}
+75%  {background-image:url(../../images/space1.jpg); background-repeat:no-repeat; background-size:400px 350px;}
+100% {background-image:url(../../images/space2.jpg); background-repeat:no-repeat; background-size:400px 350px;}
+}
+
+@-webkit-keyframes images
+{
+25%   {background-image:url(../../images/nature1.jpg); background-repeat:no-repeat; background-size:400px 350px;}
+50%  {background-image:url(../../images/nature2.jpg); background-repeat:no-repeat; background-size:400px 350px;}
+75%  {background-image:url(../../images/space1.jpg); background-repeat:no-repeat; background-size:400px 350px;}
+100% {background-image:url(../../images/space2.jpg); background-repeat:no-repeat; background-size:400px 350px;}
+}
+
+#thirdpara {
+position:absolute;
+top:-17.5%;
+font-family:MyriadPro;
+font-size:125%;
+}
+
+h3 {
+    font-size:150%;
+}
+
+.documentation {
+text-align:justify;
+position:absolute;
+top:80%;
+width:90%;
+font-family:MyriadPro;
+}
+
+.documentation p {
+    font-size:125%;
+}
+
+#full {
+    width:100%;
+}

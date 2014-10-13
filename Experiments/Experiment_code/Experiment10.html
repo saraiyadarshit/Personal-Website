@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Experiment 10</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/css10.css" />
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+    content="initial-scale=1, minimum-scale=1"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+
+
+        
+        var apikey = "6979561fa2d69d55e0124e37c663304d";
+
+        // calls all the functions in the order written below
+        onload = function loadImages() {
+            loadInTheatresMovies();
+            loadPopularMovies();
+            loadComingSoonMovies();
+        }
+
+        function loadInTheatresMovies() {
+
+            $.ajax({
+                dataType: "jsonp",
+                type: "POST",
+                contentType: "application/json",
+                url: "http://api.themoviedb.org/3/movie/now_playing?api_key=" + apikey,
+                success: function (moviesinTheatre) {
+                    console.log(moviesinTheatre);
+                    // store the resuls in movies
+                    var movies = moviesinTheatre.results;
+                    var ul = $(".intheatres");
+                    ul.empty();
+                    for (var i = 0; i < 5; i++) {
+                        var movie = movies[i];
+                        var title = movie.title;
+                        var li = $("<li>");
+                        li.append(title);
+                        ul.append(li);
+                    }
+                }
+            });
+        }
+
+        function loadPopularMovies() {
+
+            $.ajax({
+                dataType: "jsonp",
+                type: "POST",
+                contentType: "application/json",
+                url: "http://api.themoviedb.org/3/movie/popular?api_key=" + apikey,
+                
+                success: function (Popularmovies) {
+                    console.log(Popularmovies);
+                    // store the resuls in movies
+                    var movies = Popularmovies.results;
+                    var ul = $(".popularmovies");
+                    ul.empty();
+                    for (var i = 0; i < 5; i++) {
+                        var movie = movies[i];
+                        var title = movie.title;
+                        var li = $("<li>");
+                        li.append(title);
+                        ul.append(li);
+                    }
+                }
+            });
+        }
+
+        function loadComingSoonMovies() {
+
+            $.ajax({
+                dataType: "jsonp",
+                type: "POST",
+                contentType: "application/json",
+                url: "http://api.themoviedb.org/3/movie/upcoming?api_key=" + apikey,
+                //data:{},
+                success: function (Upcomingmovies) {
+                    console.log(Upcomingmovies);
+                    // store the resuls in movies
+                    var movies = Upcomingmovies.results;
+                    var ul = $(".comingsoon");
+                    ul.empty();
+                    for (var i = 0; i < 5; i++) {
+                        var movie = movies[i];
+                        var title = movie.title;
+                        var li = $("<li>");
+                        li.append(title);
+                        ul.append(li);
+                    }
+                }
+            });
+        }
+        
+    </script>
+
+</head>
+<body>
+    <div class="main_div">
+        <div class="header">
+            <h1>Experiment 10</h1>
+            <h2>The Movie Database</h2>
+        </div>
+
+        <div class="masterNavigation">
+                <ul class="master_navigation">
+                    <li><a href="Experiment10.html">Exp 10</a></li>
+                    <li><a href="Experiment10.html">Exp 10</a></li>
+                    <li><a href="Experiment10.html">Exp 10</a></li>
+                    <li><a href="Experiment10.html">Exp 10</a></li>
+                    <li><a href="Experiment10.html">Exp 10</a></li>
+                    <li><a href="Experiment10.html">Exp 10</a></li>
+                    <li><a href="Experiment10.html">Exp 10</a></li>
+                    <li><a href="Experiment10.html">Exp 10</a></li>
+                    <li><a href="Experiment10.html">Exp 10</a></li>
+                </ul>
+            </div>
+
+        <div class="in_theatres">
+            <h3>In Theatres: </h3>
+            <ul class="intheatres"></ul>
+
+        </div>
+
+        <div class="Popular_Movies">
+            <h3>Popular Movies:</h3>
+            <ul class="popularmovies"></ul>
+        </div>
+
+        <div class="Coming_Soon">
+            <h3>Coming Soon:</h3>
+            <ul class="comingsoon"></ul>
+        </div>
+
+        <div class="documentation">
+            <h3>Documentation:</h3>
+            <ul>
+            <li>In this experiment I have used The Movie DB API to display the movies which are currently in theatres, popular movies and upcoming movies.</li>
+            <li>I have made three different requests to the TV DB API to display the movies.</li>
+            <li>I have used javascript and AJAX.</li>
+            <li id="link">View Source : <a href="../../fileview/Default.aspx?~/Experiments/Experiment_code/Experiment10.html" target="_blank">Click Here!</a></li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>

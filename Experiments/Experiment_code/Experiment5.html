@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Experiment 5</title>
+    <link rel="stylesheet" type="text/css" href="../css/css5.css" />
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+    content="initial-scale=1, minimum-scale=1"/>
+
+    <script type="text/javascript">
+
+        function validateForm() {
+
+            //First name validation
+            var y = document.forms["form1"]["FirstName"].value;
+            if (y == null || y == "") {
+                alert("First name must be filled out");
+                return false;
+            }
+
+            re = /^[A-Za-z]+$/;
+
+            if (!(re.test(document.form1.FirstName.value))) {
+                alert('Invalid First Name.');
+                return false;
+            }
+
+            //Last name validation
+            var z = document.forms["form1"]["LastName"].value;
+            if (z == null || z == "") {
+                alert("Last name must be filled out");
+                return false;
+            }
+            if (!(re.test(document.form1.LastName.value))) {
+                alert('Invalid Last Name.');
+                return false;
+            }
+
+
+            //User Id validation
+            var a = document.forms["form1"]["UserId"].value;
+            if (a == null || a == "") {
+                alert("Login Id must be filled out");
+                return false;
+            }
+            var minLength = 6;
+            if (document.form1.UserId.value.length < minLength) {
+                alert('Your Login Id must be at least ' + minLength + ' characters long. Try again.');
+                return false;
+            }
+
+            //Password validation
+            var invalid = " ";
+
+            var pw1 = document.form1.Password.value;
+            if (pw1 == "") {
+                alert('Please enter your password.');
+                return false;
+            }
+            if (document.form1.Password.value.length < minLength) {
+                alert('Your password must be at least ' + minLength + ' characters long. Try again.');
+                return false;
+            }
+            if (document.form1.Password.value.indexOf(invalid) > -1) {
+                alert("Sorry, spaces are not allowed in password.");
+                return false;
+            }
+
+            //Confirm Password Vaidation
+
+            var pw2 = document.form1.Password1.value;
+            if (pw1 != pw2) {
+                alert('The password does not match. Try again')
+                return false;
+            }
+
+
+            //Address Validation
+            var b = document.forms["form1"]["Address"].value;
+            if (b == null || b == "") {
+                alert("Address must be filled out");
+                return false;
+            }
+
+
+            //City Validation
+            var c = document.forms["form1"]["City"].value;
+            if (c == null || c == "") {
+                alert("City name must be filled out");
+                return false;
+            }
+            if (!(re.test(document.form1.City.value))) {
+                alert('Invalid City Name.');
+                return false;
+            }
+
+            //Mobile number Validation
+            var e = document.forms["form1"]["MobileNo"].value;
+            if (e == null || e == "") {
+                alert("Mobile number must be filled out");
+                return false;
+            }
+            if (re.test(document.form1.MobileNo.value)) {
+                alert('Invalid Mobile No.');
+                return false;
+            }
+
+        }
+
+        function passwordStrength() {
+
+            var strongPwd = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+            var mediumPwd = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+            var minPwd = new RegExp("(?=.{6,}).*", "g");
+            var pwd = document.getElementById("pos1");
+            if (pwd.value.length == 0) {
+                alert('Please Enter your Password');
+            } else if (false == minPwd.test(pwd.value)) {
+                alert('The Password should be atleast 6 characters long. Try Again');
+            } else if (strongPwd.test(pwd.value)) {
+                alert('Strenght of your Password is: Strong!');
+            } else if (mediumPwd.test(pwd.value)) {
+                alert('Strength of your Password is: Medium!');
+            } else {
+                alert('Strenght of your Password is: Weak!');
+            }
+        }
+</script>
+
+</head>
+<body>
+    <h2>Experiment 5</h2>
+    <h3>Validtion Using JavaScript</h3>
+    <h3>Please Enter the Following Details</h3>
+    <div class="main">
+
+        <form name="form1">
+
+        <strong>First Name:</strong>&nbsp; <input type="text" name="FirstName" placeholder="Your First Name"/> <br/><br/>
+
+        <strong>Last Name:</strong>&nbsp;<input type="text" name="LastName" placeholder="Your Last Name"/><br/><br/>
+
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+        <strong>UserId:</strong>&nbsp;<input type="text" name="UserId" placeholder="Your User ID"/><br/><br/>
+
+        &nbsp;
+        <strong class="pos">Password:</strong>&nbsp;<input type="password" name="Password" placeholder="Password" id="pos1"/>
+            <button class="pos" onclick="passwordStrength()">Check Strength</button><br/><br/>
+
+        &nbsp&nbsp&nbsp;
+        <strong class="long">Confirm:</strong>&nbsp;<input type="password" name="Password1" placeholder="Confirm Password"/><br/><br/>
+
+        &nbsp&nbsp&nbsp;
+        <strong>Address:</strong>&nbsp;<input type="text" name="Address" placeholder="Address"/><br/><br/>
+
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+        <strong>City:</strong>&nbsp;<input type="text" name="City" placeholder="City"/><br/><br/>
+
+        
+        <strong>Mobile No:</strong>&nbsp;<input type="text" name="MobileNo" placeholder="Mobile Number"/><br/><br/>
+
+        &nbsp&nbsp&nbsp;
+        <strong>Email Id:</strong>&nbsp;<input type="email" name="EmailId" placeholder="Email ID"/><br/><br/>
+
+        <button onclick="return validateForm()">Submit</button>
+
+        </form>
+
+    </div>
+
+    <div class="documentation">
+            <hr/>
+            <h3> Documentation</h3>
+            <p>The purpose of this experiment was to learn Validation Using Javascript.</p>
+            <p>The User will enter values in the given fields to register. Upon clicking the submit button a Javascript will run to validate the inputs given by the user. If there is an invalid input, the Javascript will throw an alert with information to rectify the mistake.</p>
+            <p>There is also a function to check the strength of the password which uses JavaScript and Regular Expression to evaluate the strength of the Password.</p>
+            <p>The Email Id field has input type "email", a new feature in HTML5 which automatically verifies the input.</p> 
+            <p>This Experiment will be used in the project to create new member registration page.</p>   
+            <p>Used HTML5, CSS3 and Javascript to implement this experiment.</p>
+        <p>View Source : <a href="../../fileview/Default.aspx?~/Experiments/Experiment_code/Experiment5.html" target="_blank">Click Here!</a></p>
+</div>
+
+</body>
+</html>

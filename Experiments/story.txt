@@ -1,0 +1,14 @@
+../story/whatisnext.htm?../Experiments/story.txt What is Next?
+Experiment_code/Experiment1.html								 Experiment 1 : CSS
+Experiment_code/Experiment2.html								 Experiment 2 : Fluid Layout and JavaScript
+Experiment_code/Experiment3.html								 Experiment 3 : Transition of Images using CSS
+Experiment_code/Experiment4.html								 Experiment 4 : Accordian using HTML5, CSS3 and JQuery
+Experiment_code/Experiment5.html								 Experiment 5 : Validation using Javascript
+Experiment_code/Experiment6.html								 Experiment 6 : Feedback Form using HTML5, CSS3 and Javacsript
+Experiment_code/Experiment7.html								 Experiment 7 : Implementation of API
+Experiment_code/Experiment8.aspx								 Experiment 8 : Send Email Using ASP.NET
+Experiment_code/Experiment9.html								 Experiment 9 : Searching movies using The Movie DB API
+Experiment_code/Experiment10.html								 Experiment 10 : Displaying movies using The Movie DB API
+Experiment_code/Experiment11.html								 Experiment 11 : Testing The Movie DB API
+Experiment_code/Experiment12.html								 Experiment 12 : Learning JQuery
+Experiment_code/Experiment13.aspx								 Experiment 13 : API key hiding
